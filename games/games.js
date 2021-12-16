@@ -92,15 +92,18 @@ finishGameButton.addEventListener('click', async() => {
     // console.log(allGames);
 
     
-    // reassign the past games state to the re-fetched, updated games
+    // reassign the past games state to the re-fetched, updated games ???? WHAT DOES MEAN
     
     displayAllGames(allGames);
     
+
+    //resets current state
     name1 = '';
     name2 = '';
     score1 = 0;
     score2 = 0;
 
+    // re-displays CurrentGameEl with reset state
     displayCurrentGameEl();
 });
 
@@ -115,11 +118,12 @@ window.addEventListener('load', async() => {
     // console.log(allGames);
 
     // check if there are any
-
-    // if there are, set those as the initial state of pastGames
+    // if there are, set those as the initial state of pastGames ???? WHAT DOES THIS MEAN
+    if (allGames) {
+        // then display all the games (hint: call displayAllGames())
+        displayAllGames(allGames);
+    }
     
-    // then display all the games (hint: call displayAllGames())
-    displayAllGames(allGames);
 });
 
 

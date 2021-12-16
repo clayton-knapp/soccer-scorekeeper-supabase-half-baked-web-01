@@ -43,7 +43,7 @@ export async function getUser() {
 //CHECK AUTH 
 export async function checkAuth() {
     const user = await getUser();
-    console.log(user);
+    // console.log(user);
 
     if (!user) location.replace('../'); 
 }
