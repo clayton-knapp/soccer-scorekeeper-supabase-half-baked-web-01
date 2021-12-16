@@ -113,15 +113,15 @@ logoutButton.addEventListener('click', () => {
  // on load . . .
 window.addEventListener('load', async() => {
     // fetch all games
-    const allGames = await getGames();
-    // console.log(allGames);
+    // const allGames = await getGames();
+    // // console.log(allGames);
 
-    // check if there are any
-    // if there are, set those as the initial state of pastGames ???? WHAT DOES THIS MEAN
-    if (allGames) {
+    // // check if there are any
+    // // if there are, set those as the initial state of pastGames ???? WHAT DOES THIS MEAN
+    // if (allGames) {
         // then display all the games (hint: call displayAllGames())
-        displayAllGames();
-    }
+    displayAllGames();
+    // }
     
 });
 
@@ -156,6 +156,7 @@ async function displayAllGames() {
 
     // fetch and loop through the past games 
     const allGames = await getGames();
+
     for (let eachGame of allGames) {
         // render and append a past game for each past game in state
         const pastGameNode = renderGame(eachGame);
