@@ -1,7 +1,7 @@
 import { 
     redirectToGames, 
     signInUser, 
-    signupUser,
+    signUpUser,
 } from './fetch-utils.js';
 
 const signInForm = document.getElementById('sign-in');
@@ -15,9 +15,12 @@ const signUpPassword = document.getElementById('sign-up-password');
 // if user currently logged in, redirect
 redirectToGames();
 
+
 signUpForm.addEventListener('submit', async(event)=>{
     event.preventDefault();
-    const user = await signupUser(signUpEmail.value, signUpPassword.value);
+    const user = await signUpUser(signUpEmail.value, signUpPassword.value);
+
+    signUpForm.reset;
 
     if (user){
         redirectToGames();
