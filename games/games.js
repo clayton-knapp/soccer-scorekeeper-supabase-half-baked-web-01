@@ -88,13 +88,12 @@ finishGameButton.addEventListener('click', async() => {
     
     // re-fetch the games to get the updated state
     // calls getGames and should return an array of Game Objects
-    const allGames = await getGames();
-    // console.log(allGames);
+    // const allGames = await getGames();
 
     
     // reassign the past games state to the re-fetched, updated games ???? WHAT DOES MEAN
     
-    displayAllGames(allGames);
+    displayAllGames();
     
 
     //resets current state
@@ -121,7 +120,7 @@ window.addEventListener('load', async() => {
     // if there are, set those as the initial state of pastGames ???? WHAT DOES THIS MEAN
     if (allGames) {
         // then display all the games (hint: call displayAllGames())
-        displayAllGames(allGames);
+        displayAllGames();
     }
     
 });
@@ -151,11 +150,12 @@ function displayCurrentGameEl() {
 }
 
 
-function displayAllGames(allGames) {
+async function displayAllGames() {
     // clear out the past games list in the DOM
     pastGamesEl.textContent = '';
 
     // fetch and loop through the past games 
+    const allGames = await getGames();
     for (let eachGame of allGames) {
         // render and append a past game for each past game in state
         const pastGameNode = renderGame(eachGame);
